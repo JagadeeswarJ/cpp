@@ -42,6 +42,26 @@ public:
         cout << "Real: " << real << " Imaginary: " << imag << endl;
     }
 };
+
+class Parent
+{
+public:
+// virtual function is a fucntion that u expect to be redefined in derived class
+// defined in base class, overridden in child class
+    virtual void show()
+    {
+        cout << "Parent class" << endl;
+    }
+};
+class Child : public Parent
+{
+public:
+    void show()
+    {
+        cout << "Child class" << endl;
+    }
+};
+
 int main()
 {
     cout << "Polymorphism" << endl;
@@ -59,6 +79,12 @@ int main()
     c3.display();
     // this is compile time polymorphism
     // 2. Run time polymorphism (function overriding)
+    cout << "Run time polymorphism:\nfunction overriding" << endl;
+    Child c;
+    c.show(); // Parent class
+    Parent *p1 = new Child();
+    // runtime polymorphism through function overriding is achieved using virtual functions.
+    p1->show(); // Child class
     // Function Overloading: same function name with different parameters
     // Function Overriding: same function name in base and derived class
     // Operator Overloading: defining the behavior of operators for user-defined types
