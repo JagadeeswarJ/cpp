@@ -15,23 +15,33 @@ class Car
 public:
     string color;
     string name;
+    int *mileage;
+
     Car()
     {
         cout << "Car created, no details" << endl;
     }
+
     Car(string n, string c)
     {
         cout << "Car created" << endl;
         this->name = n;
         this->color = c;
         this->start();
+        // dynamically allocated memory
+        mileage = new int;
+        *mileage = 10;
     }
     // copy constructor
     Car(const Car &c)
     {
+
         cout << "copying car" << endl;
         this->name = c.name;
         this->color = c.color;
+        // mileage = c.mileage; // shallow copy
+        mileage = new int;       // deep copy
+        *mileage = *(c.mileage); // deep copy
         cout << "car copied" << endl;
     }
     void start()
@@ -41,6 +51,22 @@ public:
     void stop()
     {
         cout << "Car stopped" << endl;
+    }
+    ~Car()
+    {
+        cout << this->name << " Car destroyed" << endl;
+        // free the dynamically allocated memory, static memory is automatically freed
+        // when the object goes out of scope
+        // delete the pointer to the dynamically allocated memory
+        delete mileage;
+        if(mileage!=NULL)
+        {
+            cout << "mileage deleted" << endl;
+        }
+        else
+        {
+            cout << "mileage already deleted" << endl;
+        }
     }
 };
 int main()
@@ -72,6 +98,17 @@ int main()
     // shallow copy can cause problems if the original object is deleted, as the copied object will still point to the deleted memory
     // deep copy is safer as it creates a new copy of the memory and does not depend on the original object
     // shallow copy is faster as it does not create a new copy of the memory
-    
+    cout << "shallow , deep Copy" << endl;
+    cout << "c2 mileage: " << *(c2.mileage) << endl;
+    cout << "c3 mileage: " << *(c3.mileage) << endl;
+    *c2.mileage = 123;
+    // even in default constructor , shallow copy is done, hence use custom copy constructor, with deep copy
+    cout << *c3.mileage << endl; // due to shallow copy, c3 mileage will also change
+    // cout << "c3 mileage: " << *(c3.mileage) << endl;
+
+    cout << "Destructor" << endl;
+    // destructor is called when the object goes out of scope, or when delete is called on the object,automatically called
+    // a custom destructor is used to free the dynamically allocated memory
+
     return 0;
 }
