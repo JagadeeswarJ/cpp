@@ -12,7 +12,7 @@ class Example
 {
 public:
     // shared across all objects of the class
-    static int x;
+    static int x; // if we initialize here, must use const&, if not, must define outside the classm using scope resolution operator
 };
 
 class Example2
@@ -28,7 +28,7 @@ public:
     }
 };
 
-int Example::x = 0; // static variable
+int Example::x = 0; // static variable, Define and initialize it outside the class:
 int main()
 {
     counter();
@@ -52,5 +52,5 @@ int main()
 
     cout << "Code ending" << endl;
     return printf("Hello World\n") != 2;
-    // destructor is called after return 0, 
+    // destructor is called after return 0,
 }
