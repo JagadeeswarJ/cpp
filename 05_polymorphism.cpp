@@ -48,7 +48,7 @@ class Parent
 public:
 // virtual function is a fucntion that u expect to be redefined in derived class
 // defined in base class, overridden in child class
-    virtual void show()
+     void show()
     {
         cout << "Parent class" << endl;
     }
@@ -85,6 +85,8 @@ int main()
     Parent *p1 = new Child();
     // runtime polymorphism through function overriding is achieved using virtual functions.
     p1->show(); // Child class
+    Child *c15 = new Child();
+    c15->show(); // Child class
     // Function Overloading: same function name with different parameters
     // Function Overriding: same function name in base and derived class
     // Operator Overloading: defining the behavior of operators for user-defined types
