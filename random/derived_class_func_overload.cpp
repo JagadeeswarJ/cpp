@@ -21,6 +21,6 @@ int main()
     derived d(10);
     d.f1(); // LINE-1
     // Even though base::f1() exists with no parameters, the moment derived declares a function called f1(int), it hides all overloads of f1() from the base class — even if they have different signatures.
-    // So base::f1() is not visible in derived unless you explicitly bring it in.
+    // So base::f1() is not visible in derived unless you explicitly bring it in., using base::f1;
     return 0;
 }
