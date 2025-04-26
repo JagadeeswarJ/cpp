@@ -1,0 +1,41 @@
+A container adapter is a wrapper around an existing container (like vector, deque, etc.) that provides a restricted interface—specialized for a particular usage pattern.
+
+They adapt underlying containers to provide specific functionality (like a stack, queue, or priority queue).
+
+// For example, a stack adapter uses a vector or deque to provide LIFO (Last In First Out) access, while a queue adapter uses a deque to provide FIFO (First In First Out) access.
+// This allows you to use the underlying container's features while enforcing a specific access pattern.
+
+📦 Types of Container Adapters
+C++ provides 3 main container adapters in the STL:
+
+Adapter	        Behavior	                    Default Underlying Container
+stack	        LIFO (Last-In-First-Out)	    deque
+queue	        FIFO (First-In-First-Out)	    deque
+priority_queue	Highest priority element first	vector (with make_heap)
+
+🔍 binary_search in C++ (STL)
+The binary_search function in C++ is part of the <algorithm> header and is used to check whether a given element exists in a sorted range.
+
+📌 Syntax:
+
+bool binary_search(start_iterator, end_iterator, value);
+                                    end_iterator: Iterator pointing past the end of the range.
+
+
+🔁 First Rotate: rotate(arr, arr + 3, arr + 5);
+This rotates the range [arr, arr+5) around the point arr + 3.
+
+
+    vec.resize(new_size);                 // Resize to new_size elements
+vec.resize(new_size, default_value);  // Fill new elements with default_value
+default_value is the value to fill the new elements with.
+
+in C++, the end_iterator (often written as v.end()) represents the position just past the last element of the container.
+
+
+# string append
+string str = "Hello";
+str.append(" World"); // Appends " World" to str
+str += " World"; // Another way to append " World" to str
+
+insert is used to insert a substring at a specific position in the string.

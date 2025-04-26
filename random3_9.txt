@@ -1,0 +1,47 @@
+Number n1();
+looks like it's creating an object, but it's not! 😮
+This is a common C++ pitfall known as the "Most Vexing Parse.",
+It declares a function named n1 that:
+Takes no arguments, and
+Returns an object of type Number.
+
+
+
+MyClass(const char* _s1, const char* _s2, const char* _s3) :
+s1(setS1(_s1)), s2(setS2(_s2)),
+s3(setS3(_s3)){}
+The order of invocation to initialization-list function depends on the sequence of the data
+members declared in the class.
+
+this is a constant pointer (Complex * const),
+
+
+void check(myClass c){
+    //Some Code
+    }
+    int main() {
+    myClass c1;
+    check(c1);
+    return 0;
+    }
+
+
+
+
+This trick forces the calculation to happen in long long:
+(1LL * pre[i] * suf[i]) % m
+1LL is a long long literal.
+
+
+
+
+Local objects like Derived t; are automatically destroyed at end of scope → their destructors (both Derived and Base) are always called.
+Dynamic objects (created with new) must be manually destroyed with delete.
+If you don't delete, destructors are never called for dynamic objects.
+
+
+
+
+Type punning is the practice of treating a piece of memory (an object) as if it were of a different type. In this case, you're interpreting the memory layout of one object (B or C) as if it belonged to another class (A), using pointer casting.
+p = (A*)&t1;
+You're type punning an object of class B to be used as if it were of type A, purely based on memory layout compatibility.

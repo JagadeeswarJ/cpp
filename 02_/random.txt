@@ -1,0 +1,11 @@
+P3: double add(int = 0, double d = 0.0);
+P4: int add(int = 0, double d = 0.0);
+have the same parameter list: int, double — only return type differs, which is not allowed in overloading.
+
+
+
+operator new(size_t size)
+This is a built-in operator in C++ that allocates raw memory (like malloc in C), but:
+It does not call any constructor.
+It returns a void* pointer to the allocated memory.
+It is defined in <new>.

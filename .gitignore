@@ -1,7 +1,10 @@
-*
-!*/
-!*.cpp
-!*.h
-!*.md
-!*.txt
-!.gitignore
+# *
+# !*
+# !*.cpp
+# !*.h
+# !*.md
+# !*.txt
+# !.gitignore
+# !*.pdf
+
+*.exe

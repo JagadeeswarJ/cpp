@@ -16,6 +16,7 @@ int main()
 {
     base *a1 = new base();
     // The compiler knows how to convert a derived* to a base* automatically — it's called upcasting, and it's always safe.
+    // but reverse is not true, so we need to use downcasting.
     base *b1 = new derived();
     // ✅ compiler just takes the address of base part (start of object), form memory layout
     //   memory layout:
